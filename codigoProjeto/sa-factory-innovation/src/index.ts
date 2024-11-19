@@ -25,7 +25,8 @@ const createWindow = (): void => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL("http://localhost:3000/login");
+  // mainWindow.loadURL("http://localhost:3000/login");
+  mainWindow.loadURL("http://Localhost:3000/estoque");
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();

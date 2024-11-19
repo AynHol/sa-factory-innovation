@@ -20,13 +20,14 @@ export default class UserRepository {
         try {
             this.connection.connect();
             const sql =
-                "insert into conta (id, nome, email, cpf, password_hash,) values ($1, $2, $3, $4, $5)";
+                "insert into conta (id, nome, email, cpf, password_hash, status) values ($1, $2, $3, $4, $5, $6)";
             const values = [
                 user.getId(),
                 user.getNome(),
                 user.getEmail(),
                 user.getCPF(),
                 user.getPassword(),
+                true,
             ];
             await this.connection.query(sql, values);
         } catch (error) {
@@ -40,7 +41,7 @@ export default class UserRepository {
     async findByEmail(email: string) {
         try {
             this.connection.connect();
-            const sql = "select * from usuario where email = $1";
+            const sql = "select * from conta where email = $1";
             const result = await this.connection.query(sql, [email]);
             return result.rows[0];
         } catch (error) {
@@ -55,7 +56,7 @@ export default class UserRepository {
     async findByCPF(cpf: string) {
         try {
             this.connection.connect();
-            const sql = "select * from usuario where cpf = $1";
+            const sql = "select * from conta where cpf = $1";
             const result = await this.connection.query(sql, [cpf]);
             return result.rows[0];
         } catch (error) {
@@ -70,7 +71,7 @@ export default class UserRepository {
     async deleteUser(id: string) {
         try {
             this.connection.connect();
-            const sql = "update usuario set status = $1 where id = $2";
+            const sql = "update conta set status = $1 where id = $2";
             await this.connection.query(sql, [false, id]);
         } catch (error) {
             console.log(error);

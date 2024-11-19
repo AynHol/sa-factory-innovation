@@ -31,15 +31,16 @@ create table controle_qualidade (
 	motor boolean not null,
 	lataria boolean not null,
 	interior boolean not null,
-	vidro boolean not null,
+	farol boolean not null,
 	veiculo_id uuid not null,
 	foreign key (veiculo_id) references veiculo(id)
 );
 
-create table conta {
+create table conta (
 	id uuid primary key not null,
 	nome varchar(50) not null,
 	email varchar(50) unique not null,
 	cpf varchar(14) unique not null,
-	password_hash varchar not null
-};
+	password_hash varchar not null,
+	status boolean not null
+);

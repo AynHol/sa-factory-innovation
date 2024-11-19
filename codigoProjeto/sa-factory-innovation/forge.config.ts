@@ -40,6 +40,30 @@ const config: ForgeConfig = {
               js: './src/preload.ts',
             },
           },
+          {
+            html: './src/view/estoque/estoque.html',
+            js: './src/view/estoque/renderer.ts',
+            name: 'estoque',
+            preload: {
+              js: './src/preload.ts',
+            },
+          },
+          {
+            html: './src/view/producao/producao.html',
+            js: './src/view/producao/renderer.ts',
+            name: 'producao',
+            preload: {
+              js: './src/preload.ts',
+            },
+          },
+          {
+            html: './src/view/qualidade/qualidade.html',
+            js: './src/view/qualidade/renderer.ts',
+            name: 'qualidade',
+            preload: {
+              js: './src/preload.ts',
+            },
+          },
         ],
       },
     }),
