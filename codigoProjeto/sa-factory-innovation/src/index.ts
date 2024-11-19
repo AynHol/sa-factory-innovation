@@ -26,7 +26,8 @@ const createWindow = (): void => {
 
   // and load the index.html of the app.
   // mainWindow.loadURL("http://localhost:3000/login");
-  mainWindow.loadURL("http://Localhost:3000/estoque");
+  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  // mainWindow.loadURL("http://Localhost:3000/estoqueLista");
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -83,4 +84,8 @@ ipcMain.handle("findByCPF", async (_: any, cpf: string) => {
 ipcMain.handle('hash_password', async (_: any, credentials: any) => {
   const { password, password_hash } = credentials;
   return await compare(password, password_hash);
+});
+
+ipcMain.on("changePageEstoque", (_: any, id: string) => {
+  mainWindow.loadURL(`http://localhost:3000/estoque?id=${id}`);
 });

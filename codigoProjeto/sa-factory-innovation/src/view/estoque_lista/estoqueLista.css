@@ -1,0 +1,46 @@
+body {
+    background-color: #e5e6f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vw;
+}
+
+main {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    height: 45vw;
+    width: 30vw;
+}
+
+main h1 {
+    text-align: center;
+}
+
+main div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px 20px;
+
+}
+
+.nome, .fabricante, .qtd, .descricao {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #000;
+
+}
+
+/* .nome h2, .fabricante h2, .qtd h2, .descricao h2 {
+    
+} 
+
+.nome div, .fabricante div, .qtd div, .descricao div {
+
+}  */

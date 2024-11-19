@@ -1,4 +1,86 @@
 body {
     background-color: #e5e6f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vw;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.estoque-cadastrar {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.button-up, .button-bottom {
+    padding: 5px;
+}
+
+.button-bottom input, textarea, .button-up input {
+    border-radius: 16px;
+    padding: 5px;
+    border: 1px solid #7e7e7e;
+    outline-style: none;
+}
+
+.button-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-bottom input {
+    margin: 0 100px;
+}
+
+#descricao {
+    height: 200px;
+    resize: none;
+}
+
+.estoque-cadastrar button {
+    border: none;
+    background-color: #8fbc8f;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border-radius: 16px;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.estoque-cadastrar button:hover {
+    background-color: #779977;
+}
+
+.button-list {
+    margin-top: 15px;
+}
+
+.button-list button {
+    border: none;
+    background-color: #5c7aca;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border-radius: 16px;
+    padding: 8px;
+    color: #fff;
+    width: 200px;
+}
+
+.button-list button:hover {
+    background-color: #4c65a8;
+}

@@ -7,8 +7,9 @@ contextBridge.exposeInMainWorld("bankAPI", {
 });
 
 contextBridge.exposeInMainWorld("navigateAPI", {
-    detailsPage: (id: string) => ipcRenderer.send("changePage", id),
     homePage: () => ipcRenderer.send("changePageHome"),
+    estoquePage: (id: string) => ipcRenderer.send("changePageEstoque", id),
+
 });
 
 contextBridge.exposeInMainWorld("authAPI", {

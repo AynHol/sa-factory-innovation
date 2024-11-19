@@ -1,5 +1,5 @@
 import { Client } from "pg";
-import User from "src/entity/User";
+import User from "../entity/User";
 
 export default class UserRepository {
     private connection: Client;
