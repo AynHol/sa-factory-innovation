@@ -6,23 +6,23 @@
     <title>Estoque</title>
 </head>
 <body>
-    <main>
+    <main id="cadastroEstoque">
         <div class="estoque-cadastrar">
             <h1>Cadastrar</h1>
             <div>
                 <div class="button-up">
-                    <input type="text" name="nome" placeholder="Nome">
-                    <input type="text" name="fabricante" placeholder="Fabricante">
+                    <input type="text" name="nome" placeholder="Nome" id="nome">
+                    <input type="text" name="fabricante" placeholder="Fabricante" id="fabricante">
                 </div>
                 <div class="button-bottom">
-                    <input type="text" name="quantidade" placeholder="Quantidade">
+                    <input type="text" name="quantidade" placeholder="Quantidade" id="quantidade">
                     <textarea name="descricao" id="descricao" placeholder="Descrição"></textarea>
                 </div>
-                <button>Cadastrar</button>
+                <button id="cadastrarButton">Cadastrar</button>
             </div>
         </div>
         <div class="button-list">
-            <button>Ver Lista</button>
+            <button id="verListaButton" onclick="estoqueListPage()">Ver Lista</button>
         </div>
     </main>
 </body>

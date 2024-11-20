@@ -49,8 +49,8 @@ const config: ForgeConfig = {
             },
           },
           {
-            html: './src/view/estoque_lista/estoqueLista.html',
-            js: './src/view/estoque_lista/renderer.ts',
+            html: './src/view/estoqueLista/estoqueLista.html',
+            js: './src/view/estoqueLista/renderer.ts',
             name: 'estoqueLista',
             preload: {
               js: './src/preload.ts',

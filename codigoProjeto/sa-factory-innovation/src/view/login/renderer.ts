@@ -39,7 +39,7 @@ document.getElementById("acessar").addEventListener("click", async (event: Mouse
     const cpf = document.getElementById("CPF_login") as HTMLInputElement;
     const password = document.getElementById("password_login") as HTMLInputElement;
 
-    const user = await (window as any).bancoAPI.findByCPF(cpf.value)
+    const user = await (window as any).bankAPI.findByCPF(cpf.value)
     if(!user){
         console.log("Usuário não existe...")
         return;

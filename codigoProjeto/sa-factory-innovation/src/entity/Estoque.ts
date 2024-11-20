@@ -7,11 +7,11 @@ export default class Estoque {
     private quantidade: number;
     private fabricante: string;
 
-    constructor(nome: string, descricao: string, quantidade: number, fabricante: string) {
-        this.id = uuid();
+    constructor(nome: string, descricao: string, quantidade: number, fabricante: string, id?: string) {
+        this.id = id === undefined ? uuid(): id;
         this.nome = nome;
         this.descricao = descricao;
-        this;quantidade = quantidade;
+        this.quantidade = quantidade;
         this.fabricante = fabricante;
     }
 
