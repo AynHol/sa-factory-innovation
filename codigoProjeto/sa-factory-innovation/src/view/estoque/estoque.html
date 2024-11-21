@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque</title>
 </head>
+
 <body>
-    <main id="cadastroEstoque">
-        <div class="estoque-cadastrar">
-            <h1>Cadastrar</h1>
-            <div>
-                <div class="button-up">
-                    <input type="text" name="nome" placeholder="Nome" id="nome">
-                    <input type="text" name="fabricante" placeholder="Fabricante" id="fabricante">
+    <header>
+        <button onclick="homePage()">Inicio</button>
+        <button onclick="qualidadePage()">QA</button>
+        <button onclick="producaoPage()">Produção</button>
+    </header>
+    <main>
+        <div id="cadastroEstoque">
+            <div class="estoque-cadastrar">
+                <h1>Cadastrar</h1>
+                <div>
+                    <div class="button-up">
+                        <input type="text" name="nome" placeholder="Nome" id="nome">
+                        <input type="text" name="fabricante" placeholder="Fabricante" id="fabricante">
+                    </div>
+                    <div class="button-bottom">
+                        <input type="text" name="quantidade" placeholder="Quantidade" id="quantidade">
+                        <textarea name="descricao" id="descricao" placeholder="Descrição"></textarea>
+                    </div>
+                    <button id="cadastrarButton">Cadastrar</button>
                 </div>
-                <div class="button-bottom">
-                    <input type="text" name="quantidade" placeholder="Quantidade" id="quantidade">
-                    <textarea name="descricao" id="descricao" placeholder="Descrição"></textarea>
-                </div>
-                <button id="cadastrarButton">Cadastrar</button>
             </div>
-        </div>
-        <div class="button-list">
-            <button id="verListaButton" onclick="estoqueListPage()">Ver Lista</button>
+            <div class="button-list">
+                <button id="verListaButton" onclick="estoqueListPage()">Ver Lista</button>
+            </div>
         </div>
     </main>
 </body>
+
 </html>

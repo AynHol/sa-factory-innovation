@@ -1,0 +1,93 @@
+body {
+    background-color: #e5e6f0;
+}
+
+header {
+    background-color: #8fbc8f;
+    width: 205px;
+    height: 40px;
+    padding: 7px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-bottom-right-radius: 16px;
+}
+
+header button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 16px;
+}
+
+header button:hover {
+    background-color: #cccdd6;
+}
+
+main {
+    display: flex;
+    height: 35vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondmain {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondmain h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+}
+
+#combobox {
+    outline-style: none;
+    border: 1px solid #7e7e7e;
+    border-radius: 16px;
+    margin-left: 30px;
+}
+
+.checks {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.check-left, .check-center, .check-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.check-left label,.check-center label, .check-right  label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.producao-button {
+    display: flex;
+    gap: 10px;
+}
+
+.producao-button button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 16px;
+    color: #fff;
+}
+
+#aprovarButton {
+background-color: rgb(25, 182, 25);
+}
+
+#reprovarButton {
+background-color: rgb(219, 61, 61);
+}

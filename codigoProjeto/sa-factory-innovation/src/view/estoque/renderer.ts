@@ -39,5 +39,17 @@ document.getElementById("cadastrarButton")?.addEventListener("click", async (eve
 function estoqueListPage() {
     (window as any).navigateAPI.estoqueListPage();
 }
+function homePage() {
+    (window as any).navigateAPI.homePage();
+}
+function producaoPage() {
+    (window as any).navigateAPI.producaoPage();
+}
+function qualidadePage() {
+    (window as any).navigateAPI.qualidadePage();
+}
 
 (window as any).estoqueListPage = estoqueListPage;
+(window as any).homePage = homePage;
+(window as any).producaoPage = producaoPage;
+(window as any).qualidadePage = qualidadePage;

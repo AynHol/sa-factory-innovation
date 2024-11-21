@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualidade</title>
+</head>
+
+<body>
+    <header>
+        <button onclick="homePage()">Inicio</button>
+        <button onclick="producaoPage()">Produção</button>
+        <button onclick="estoquePage()">Estoque</button>
+    </header>
+    <main>
+        <div class="secondmain">
+            <h2>Inspeção</h2>
+            <div>
+                <div>
+                    <select id="combobox"></select>
+                </div>
+                <div class="checks">
+                    <div class="check-left">
+                        <div>
+                            <input type="checkbox" id="checkPneu">
+                            <label for="checkPneu">Pneu</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkLataria">
+                            <label for="checkLataria">Lataria</label>
+                        </div>
+                    </div>
+                    <div class="check-center">
+                        <div>
+                            <input type="checkbox" id="checkPorta">
+                            <label for="checkPorta">Porta</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkInterior">
+                            <label for="checkInterior">Interior</label>
+                        </div>
+                    </div>
+                    <div class="check-right">
+                        <div>
+                            <input type="checkbox" id="checkMotor">
+                            <label for="checkMotor">Motor</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkFarol">
+                            <label for="checkFarol">Farol</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="producao-button">
+                <button id="aprovarButton">Aprovar</button>
+                <button id="reprovarButton">Reprovar</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

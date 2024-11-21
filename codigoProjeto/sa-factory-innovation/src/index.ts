@@ -28,8 +28,7 @@ const createWindow = (): void => {
 
   // and load the index.html of the app.
   // mainWindow.loadURL("http://localhost:3000/login");
-  // mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-  mainWindow.loadURL("http://Localhost:3000/estoqueLista")
+  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -100,4 +99,12 @@ ipcMain.on("changePageEstoque", () => {
 
 ipcMain.on("changePageEstoqueList", () => {
   mainWindow.loadURL(`http://localhost:3000/estoqueLista`);
+});
+
+ipcMain.on("changePageProducao", () => {
+  mainWindow.loadURL(`http://localhost:3000/producao`);
+});
+
+ipcMain.on("changePageQA", () => {
+  mainWindow.loadURL(`http://localhost:3000/qualidade`);
 });

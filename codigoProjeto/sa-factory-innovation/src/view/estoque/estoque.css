@@ -1,12 +1,37 @@
 body {
     background-color: #e5e6f0;
+}
+
+header {
+    background-color: #8fbc8f;
+    width: 175px;
+    height: 40px;
+    padding: 7px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50vw;
+    flex-direction: row;
+    gap: 10px;
+    border-bottom-right-radius: 16px;
+}
+
+header button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 16px;
+}
+
+header button:hover {
+    background-color: #cccdd6;
 }
 
 main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46vw;
+}
+
+#cadastroEstoque {
     display: flex;
     flex-direction: column;
     gap: 10px;

@@ -1,0 +1,68 @@
+body {
+    background-color: #e5e6f0;
+}
+
+header {
+    background-color: #8fbc8f;
+    width: 175px;
+    height: 40px;
+    padding: 7px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-bottom-right-radius: 16px;
+}
+
+header button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 16px;
+}
+
+header button:hover {
+    background-color: #cccdd6;
+}
+
+main {
+    display: flex;
+    height: 35vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondmain {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.producao-cadastrar h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-up input, .input-bottom input {
+    border-radius: 16px;
+    padding: 5px;
+    border: 1px solid #7e7e7e;
+    outline-style: none;
+}
+
+#combobox1, #combobox2, #combobox3, #combobox4, #combobox5, #combobox6, #combobox7 {
+    outline-style: none;
+    border: 1px solid #7e7e7e;
+    border-radius: 16px;
+}
