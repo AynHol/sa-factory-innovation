@@ -57,5 +57,5 @@ document.getElementById("acessar").addEventListener("click", async (event: Mouse
         return;
     }
 
-    (window as any).navigateAPI.homePage();
+    (window as any).navigateAPI.homePage(cpf.value);
 })

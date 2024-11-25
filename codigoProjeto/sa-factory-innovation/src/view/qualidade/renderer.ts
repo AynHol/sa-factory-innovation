@@ -22,6 +22,11 @@ function producaoPage() {
     (window as any).navigateAPI.producaoPage();
 }
 
+function qualidadeResultPage() {
+    (window as any).navigateAPI.qualidadeResultPage();
+}
+
 (window as any).estoquePage = estoquePage;
 (window as any).homePage = homePage;
 (window as any).producaoPage = producaoPage;
+(window as any).qualidadeResultPage = qualidadeResultPage;

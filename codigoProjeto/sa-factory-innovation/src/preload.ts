@@ -2,18 +2,20 @@ import { contextBridge, ipcRenderer } from "electron";
 import Estoque from "./entity/Estoque";
 
 contextBridge.exposeInMainWorld("bankAPI", {
+    findAll: async () => await ipcRenderer.invoke('findAll'),
     createEstoque: async (estoque: Estoque) => await ipcRenderer.invoke("createEstoque", estoque),
     createUser: async (user: any) => await ipcRenderer.invoke("createUser", user),
-    findByEmail: async (email: string) => await ipcRenderer.invoke("findByEmail", email),
+    findName: async (cpf: string) => await ipcRenderer.invoke("findName", cpf),
     findByCPF: async (cpf: string) => await ipcRenderer.invoke("findByCPF", cpf),
 });
 
 contextBridge.exposeInMainWorld("navigateAPI", {
-    homePage: () => ipcRenderer.send("changePageHome"),
+    homePage: (cpf: string) => ipcRenderer.send("changePageHome", cpf),
     estoquePage: () => ipcRenderer.send("changePageEstoque"),
     estoqueListPage: () => ipcRenderer.send("changePageEstoqueList"),
     producaoPage: () => ipcRenderer.send("changePageProducao"),
-    qualidadePage: () => ipcRenderer.send("changePageQA")
+    qualidadePage: () => ipcRenderer.send("changePageQA"),
+    qualidadeResultPage: () => ipcRenderer.send("changePageQAResult"),
 });
 
 contextBridge.exposeInMainWorld("authAPI", {

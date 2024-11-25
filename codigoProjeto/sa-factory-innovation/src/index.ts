@@ -27,8 +27,8 @@ const createWindow = (): void => {
   });
 
   // and load the index.html of the app.
-  // mainWindow.loadURL("http://localhost:3000/login");
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  mainWindow.loadURL("http://localhost:3000/login");
+  // mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -63,19 +63,11 @@ app.on("activate", () => {
 //   mainWindow.loadURL(DETAILS_WEBPACK_ENTRY + `?id=${id}`);
 // });
 
-ipcMain.on("changePageHome", () => {
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-});
-
 ipcMain.handle("createUser", async (_: any, user: any) => {
   const { nome, email, cpf, password } = user;
   const passwordHash = await hash(password, 12)
   const newUser = new User(nome, email, cpf, passwordHash);
   new UserRepository().save(newUser);
-});
-
-ipcMain.handle("findByEmail", async (_: any, email: string) => {
-  return await new UserRepository().findByEmail(email);
 });
 
 ipcMain.handle("findByCPF", async (_: any, cpf: string) => {
@@ -108,3 +100,19 @@ ipcMain.on("changePageProducao", () => {
 ipcMain.on("changePageQA", () => {
   mainWindow.loadURL(`http://localhost:3000/qualidade`);
 });
+
+ipcMain.on("changePageQAResult", () => {
+  mainWindow.loadURL(`http://localhost:3000/qualidadeResultado`)
+})
+
+ipcMain.on("changePageHome", (_: any, cpf: string) => {
+  mainWindow.loadURL(`http://localhost:3000/main_window?cpf=${cpf}`);
+});
+
+ipcMain.handle('findAll', async () => {
+  return await new EstoqueRepository().findAll();
+})
+
+ipcMain.handle('findName', async (_: any, cpf: string) => {
+  return await new UserRepository().findName(cpf);
+})

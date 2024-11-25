@@ -9,9 +9,11 @@ export default class UserRepository {
             this.connection = new Client({
                 host: "localhost",
                 port: 5432,
-                database: "sistema_factory",
+                // database: "sistema_factory",
+                database: "sistema_sa",
                 user: "postgres",
-                password: "senai",
+                // password: "senai",
+                password: "alder",
             });
         }
     }
@@ -38,11 +40,11 @@ export default class UserRepository {
         }
     }
 
-    async findByEmail(email: string) {
+    async findName(cpf: string) {
         try {
             this.connection.connect();
-            const sql = "select * from conta where email = $1";
-            const result = await this.connection.query(sql, [email]);
+            const sql = "select nome from conta where cpf = $1";
+            const result = await this.connection.query(sql, [cpf]);
             return result.rows[0];
         } catch (error) {
             console.log(error);

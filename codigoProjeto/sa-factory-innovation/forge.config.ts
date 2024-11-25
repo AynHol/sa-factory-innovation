@@ -72,6 +72,14 @@ const config: ForgeConfig = {
               js: './src/preload.ts',
             },
           },
+          {
+            html: './src/view/qualidadeResultado/qualidadeResultado.html',
+            js: './src/view/qualidadeResultado/renderer.ts',
+            name: 'qualidadeResultado',
+            preload: {
+              js: './src/preload.ts',
+            },
+          },
         ],
       },
     }),

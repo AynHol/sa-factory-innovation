@@ -1,5 +1,5 @@
 import { Client } from "pg";
-import Estoque from "../entity/Estoque"
+import Estoque from "../entity/Estoque";
 
 export default class EstoqueRepository {
     private connection: Client;
@@ -9,9 +9,11 @@ export default class EstoqueRepository {
             this.connection = new Client({
                 host: "localhost",
                 port: 5432,
-                database: "sistema_factory",
+                // database: "sistema_factory",
+                database: "sistema_sa",
                 user: "postgres",
-                password: "senai",
+                // password: "senai",
+                password: "alder",
             });
         }
     }
@@ -34,6 +36,21 @@ export default class EstoqueRepository {
         } finally {
             this.connection.end();
             this.connection = null;
+        }
+    }
+
+    async findAll(){
+        try {
+            this.connection.connect();
+            const sql = "select * from produto";
+            const result = await this.connection.query(sql);
+            return result.rows;
+        } catch (error) {
+            console.log(error)
+            return [];
+        } finally{
+            this.connection.end();
+        this.connection = null;
         }
     }
 }
