@@ -5,12 +5,14 @@ export default class Producao {
     private modelo: string;
     private chassi: string;
     private cor: string;
+    private anoFabricacao: number;
 
-    constructor(modelo: string, chassi: string, cor: string, id?: string) {
+    constructor(modelo: string, chassi: string, cor: string, anoFabricacao: number, id?: string) {
         this.id = id === undefined ? uuid(): id;
         this.modelo = modelo;
         this.chassi = chassi;
         this.cor = cor;
+        this.anoFabricacao = anoFabricacao;
     }
 
     public getId() {
@@ -24,5 +26,8 @@ export default class Producao {
     }
     public getCor() {
         return this.cor;
+    }
+    public getAno() {
+        return this.anoFabricacao
     }
 }

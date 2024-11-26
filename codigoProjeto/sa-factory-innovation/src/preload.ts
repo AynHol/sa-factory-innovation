@@ -1,5 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 import Estoque from "./entity/Estoque";
+import Qualidade from "./entity/Qualidade";
 
 contextBridge.exposeInMainWorld("bankAPI", {
     findAll: async () => await ipcRenderer.invoke('findAll'),
@@ -7,6 +8,8 @@ contextBridge.exposeInMainWorld("bankAPI", {
     createUser: async (user: any) => await ipcRenderer.invoke("createUser", user),
     findName: async (cpf: string) => await ipcRenderer.invoke("findName", cpf),
     findByCPF: async (cpf: string) => await ipcRenderer.invoke("findByCPF", cpf),
+    findAllVeiculo: async () => await ipcRenderer.invoke('findAllVeiculo'),
+    createQualidade: async (qualidade: Qualidade) => await ipcRenderer.invoke("createQualidade", qualidade),
 });
 
 contextBridge.exposeInMainWorld("navigateAPI", {

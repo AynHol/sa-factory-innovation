@@ -8,8 +8,9 @@ export default class Qualidade {
     private lataria: string;
     private interior: string;
     private farol: string;
+    private idveiculo: string
 
-    constructor(pneu: string, porta: string, motor: string, lataria: string, interior: string, farol: string, id?: string) {
+    constructor(pneu: string, porta: string, motor: string, lataria: string, interior: string, farol: string, idveiculo: string,  id?: string) {
         this.id = id === undefined ? uuid(): id;
         this.pneu = pneu;
         this.porta = porta;
@@ -17,6 +18,7 @@ export default class Qualidade {
         this.lataria = lataria;
         this.interior = interior;
         this.farol = farol;
+        this.idveiculo = idveiculo;
     }
 
     public getId() {
@@ -39,5 +41,8 @@ export default class Qualidade {
     }
     public getFarol() {
         return this.farol;
+    }
+    public getIdVeiculo() {
+        return this.idveiculo;
     }
 }

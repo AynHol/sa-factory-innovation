@@ -1,25 +1,77 @@
 import "./producao.css";
 import "../../reset.css";
-import Estoque from "src/entity/Estoque";
+import Estoque from "../../entity/Estoque";
+import Producao from "../../entity/Producao";
 
 
 var listProduto: Estoque[] = []
+var listproducao: Producao[] = []
+
+document.getElementById("buttonCadastroProduction")?.addEventListener("click", async (event: MouseEvent) => {
+    event.preventDefault();
+
+    var modelo = document.getElementById("modeloinput") as HTMLInputElement;
+    var chassi = document.getElementById("chassiinput") as HTMLInputElement;
+    var cor = document.getElementById("corinput") as HTMLInputElement;
+    var ano = document.getElementById("anoinput") as HTMLInputElement;
+
+    const newVeiculo = new Producao(modelo.value, chassi.value, cor.value, Number(ano.value))
+    listproducao.push(newVeiculo)
+})
 
 window.onload = async () => {
+    const estoque = await (window as any).bankAPI.findAll();
+    for (var i = 0; i < estoque.length; i++) {
+        const produto = new Estoque(
+            estoque[i].nome,
+            estoque[i].descricao,
+            estoque[i].quantidade,
+            estoque[i].fabricante,
+            estoque[i].id
+        );
+        listProduto.push(produto);
+    }
     ComboBox()
 }
 
 function ComboBox() {
-    for (var i = 1; i < 6; i++) {
-        var combobox = document.getElementById(`combobox${i}`);
-        combobox.innerHTML = `<option value="" disabled="true">Selecione uma opção</option>`;
-    }
-
+    var comboboxPneu = document.getElementById("combobox1");
+    comboboxPneu.innerHTML = `<option value="" disabled="true">Selecione um Pneu</option>`;
+    var comboboxPorta = document.getElementById("combobox2");
+    comboboxPorta.innerHTML = `<option value="" disabled="true">Selecione uma Porta</option>`;
+    var comboboxMotor = document.getElementById("combobox3");
+    comboboxMotor.innerHTML = `<option value="" disabled="true">Selecione um Motor</option>`;
+    var comboboxFarol = document.getElementById("combobox4");
+    comboboxFarol.innerHTML = `<option value="" disabled="true">Selecione um Farol</option>`;
+    var comboboxExtra = document.getElementById("combobox5");
+    comboboxExtra.innerHTML = `<option value="" disabled="true">Selecione Extras</option>`;
+    
     for (var i = 0; i < listProduto.length; i++) {
-        combobox.innerHTML += `
+        comboboxPneu.innerHTML += `
             <option value="${listProduto[i].getId()}">${listProduto[i].getNome()}</option>
         `;
     }
+    for (var i = 0; i < listProduto.length; i++) {
+        comboboxPorta.innerHTML += `
+            <option value="${listProduto[i].getId()}">${listProduto[i].getNome()}</option>
+        `;
+    }
+    for (var i = 0; i < listProduto.length; i++) {
+        comboboxMotor.innerHTML += `
+            <option value="${listProduto[i].getId()}">${listProduto[i].getNome()}</option>
+        `;
+    }
+    for (var i = 0; i < listProduto.length; i++) {
+        comboboxFarol.innerHTML += `
+            <option value="${listProduto[i].getId()}">${listProduto[i].getNome()}</option>
+        `;
+    }
+    for (var i = 0; i < listProduto.length; i++) {
+        comboboxExtra.innerHTML += `
+            <option value="${listProduto[i].getId()}">${listProduto[i].getNome()}</option>
+        `;
+    }
+
 }
 
 function estoquePage() {

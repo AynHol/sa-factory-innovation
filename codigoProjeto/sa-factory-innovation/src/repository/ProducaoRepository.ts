@@ -22,12 +22,13 @@ export default class ProducaoRepository {
         try {
             this.connection.connect();
             const sql =
-                "insert into veiculo (id, modelo, chassi, cor) values ($1, $2, $3, $4)";
+                "insert into veiculo (id, modelo, chassi, cor, ano_fabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
             const values = [
                 Producao.getId(),
                 Producao.getModelo(),
                 Producao.getChassi(),
                 Producao.getCor(),
+                Producao.getAno(),
             ];
             await this.connection.query(sql, values);
         } catch (error) {
@@ -35,6 +36,21 @@ export default class ProducaoRepository {
         } finally {
             this.connection.end();
             this.connection = null;
+        }
+    }
+
+    async findAllVeiculo(){
+        try {
+            this.connection.connect();
+            const sql = "select * from veiculo";
+            const result = await this.connection.query(sql);
+            return result.rows;
+        } catch (error) {
+            console.log(error)
+            return [];
+        } finally{
+            this.connection.end();
+        this.connection = null;
         }
     }
 }

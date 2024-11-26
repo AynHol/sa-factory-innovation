@@ -66,3 +66,15 @@ main {
     border: 1px solid #7e7e7e;
     border-radius: 16px;
 }
+
+.secondmain div button {
+    background-color: #8fbc8f;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 16px;
+}
+
+.secondmain div button:hover {
+    background-color: #749974;
+}
