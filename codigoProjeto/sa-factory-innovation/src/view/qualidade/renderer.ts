@@ -9,7 +9,7 @@ var listQA: Qualidade[] = [];
 document.getElementById("aprovarButton")?.addEventListener("click", async (event: MouseEvent) => {
     event.preventDefault();
 
-    var idVeiculo = document.getElementById("combobox") as HTMLSelectElement;
+    var veiculo_id = (document.getElementById("combobox") as HTMLSelectElement);
     var pneu = document.getElementById("checkPneu") as HTMLInputElement;
     var lataria = document.getElementById("checkLataria") as HTMLInputElement;
     var porta = document.getElementById("checkPorta") as HTMLInputElement;
@@ -17,7 +17,9 @@ document.getElementById("aprovarButton")?.addEventListener("click", async (event
     var motor = document.getElementById("checkMotor") as HTMLInputElement;
     var farol = document.getElementById("checkFarol") as HTMLInputElement;
 
-    const newqualidade = new Qualidade(pneu.value, porta.value, motor.value, lataria.value, interior.value, farol.value, idVeiculo.value);
+    var id = veiculo_id.value
+
+    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id);
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })
@@ -30,11 +32,16 @@ window.onload = async () => {
             veiculo[i].chassi,
             veiculo[i].cor,
             veiculo[i].anoFabricacao,
-            veiculo[i].id
+            veiculo[i].motorid,
+            veiculo[i].portaid,
+            veiculo[i].pneuid,
+            veiculo[i].farolid,
+            veiculo[i].extraid,
+            veiculo[i].id,
         );
         listVeiculo.push(veiculoo);
     }
-    ComboBox()
+    ComboBox();
 }
 
 function ComboBox() {
@@ -60,11 +67,17 @@ function producaoPage() {
     (window as any).navigateAPI.producaoPage();
 }
 
-function qualidadeResultPage() {
-    (window as any).navigateAPI.qualidadeResultPage();
+function qualidadeResultPageAP() {
+    (window as any).navigateAPI.qualidadeResultPageAP();
 }
+
+function qualidadeResultPageRP() {
+    (window as any).navigateAPI.qualidadeResultPageRP();
+}
+
 
 (window as any).estoquePage = estoquePage;
 (window as any).homePage = homePage;
 (window as any).producaoPage = producaoPage;
-(window as any).qualidadeResultPage = qualidadeResultPage;
+(window as any).qualidadeResultPageAP = qualidadeResultPageAP;
+(window as any).qualidadeResultPageRP = qualidadeResultPageRP;

@@ -29,6 +29,11 @@ export default class ProducaoRepository {
                 Producao.getChassi(),
                 Producao.getCor(),
                 Producao.getAno(),
+                Producao.getMotor(),
+                Producao.getPorta(),
+                Producao.getPneu(),
+                Producao.getFarol(),
+                Producao.getExtra(),
             ];
             await this.connection.query(sql, values);
         } catch (error) {

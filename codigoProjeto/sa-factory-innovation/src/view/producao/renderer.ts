@@ -14,9 +14,15 @@ document.getElementById("buttonCadastroProduction")?.addEventListener("click", a
     var chassi = document.getElementById("chassiinput") as HTMLInputElement;
     var cor = document.getElementById("corinput") as HTMLInputElement;
     var ano = document.getElementById("anoinput") as HTMLInputElement;
+    var pneubox = document.getElementById("combobox1") as HTMLSelectElement;
+    var portabox = document.getElementById("combobox2") as HTMLSelectElement;
+    var motorbox = document.getElementById("combobox3") as HTMLSelectElement;
+    var farolbox = document.getElementById("combobox4") as HTMLSelectElement;
+    var extrabox = document.getElementById("combobox5") as HTMLSelectElement;
 
-    const newVeiculo = new Producao(modelo.value, chassi.value, cor.value, Number(ano.value))
-    listproducao.push(newVeiculo)
+    const newVeiculo = new Producao(modelo.value, chassi.value, cor.value, Number(ano.value), motorbox.value, portabox.value, pneubox.value, farolbox.value, extrabox.value);
+    listproducao.push(newVeiculo);
+    (window as any).bankAPI.createProducao(newVeiculo);
 })
 
 window.onload = async () => {

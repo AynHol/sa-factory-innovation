@@ -23,39 +23,39 @@
                 <div class="checks">
                     <div class="check-left">
                         <div>
-                            <input type="checkbox" id="checkPneu">
+                            <input type="checkbox" value="true" id="checkPneu">
                             <label for="checkPneu">Pneu</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="checkLataria">
+                            <input type="checkbox" value="false" id="checkLataria">
                             <label for="checkLataria">Lataria</label>
                         </div>
                     </div>
                     <div class="check-center">
                         <div>
-                            <input type="checkbox" id="checkPorta">
+                            <input type="checkbox" value="false" id="checkPorta">
                             <label for="checkPorta">Porta</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="checkInterior">
+                            <input type="checkbox" value="false" id="checkInterior">
                             <label for="checkInterior">Interior</label>
                         </div>
                     </div>
                     <div class="check-right">
                         <div>
-                            <input type="checkbox" id="checkMotor">
+                            <input type="checkbox" value="false" id="checkMotor">
                             <label for="checkMotor">Motor</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="checkFarol">
+                            <input type="checkbox" value="false" id="checkFarol">
                             <label for="checkFarol">Farol</label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="producao-button">
-                <button id="aprovarButton" onclick="qualidadeResultPage()">Aprovar</button>
-                <button id="reprovarButton" onclick="qualidadeResultPage()">Reprovar</button>
+            <div id="producao-button" class="producao-button">
+                <button id="aprovarButton" >Aprovar</button>
+                <button id="reprovarButton" onclick="qualidadeResultPageRP()">Reprovar</button>
             </div>
         </div>
     </main>

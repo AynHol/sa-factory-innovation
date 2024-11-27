@@ -2,15 +2,15 @@ import {v4 as uuid} from "uuid";
 
 export default class Qualidade {
     private id: string;
-    private pneu: string;
-    private porta: string;
-    private motor: string;
-    private lataria: string;
-    private interior: string;
-    private farol: string;
-    private idveiculo: string
+    private pneu: boolean;
+    private porta: boolean;
+    private motor: boolean;
+    private lataria: boolean;
+    private interior: boolean;
+    private farol: boolean;
+    private veiculoid: string;
 
-    constructor(pneu: string, porta: string, motor: string, lataria: string, interior: string, farol: string, idveiculo: string,  id?: string) {
+    constructor(pneu: boolean, porta: boolean, motor: boolean, lataria: boolean, interior: boolean, farol: boolean, veiculoid: string,  id?: string) {
         this.id = id === undefined ? uuid(): id;
         this.pneu = pneu;
         this.porta = porta;
@@ -18,7 +18,7 @@ export default class Qualidade {
         this.lataria = lataria;
         this.interior = interior;
         this.farol = farol;
-        this.idveiculo = idveiculo;
+        this.veiculoid = veiculoid;
     }
 
     public getId() {
@@ -43,6 +43,6 @@ export default class Qualidade {
         return this.farol;
     }
     public getIdVeiculo() {
-        return this.idveiculo;
+        return this.veiculoid;
     }
 }

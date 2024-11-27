@@ -41,4 +41,19 @@ export default class QualidadeRepository {
             this.connection = null;
         }
     }
+
+    async findQualidade(){
+        try {
+            this.connection.connect();
+            const sql = "select * from controle_qualidade";
+            const result = await this.connection.query(sql);
+            return result.rows;
+        } catch (error) {
+            console.log(error)
+            return [];
+        } finally{
+            this.connection.end();
+        this.connection = null;
+        }
+    }
 }
