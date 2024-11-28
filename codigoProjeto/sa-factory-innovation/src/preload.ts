@@ -21,8 +21,7 @@ contextBridge.exposeInMainWorld("navigateAPI", {
     estoqueListPage: () => ipcRenderer.send("changePageEstoqueList"),
     producaoPage: () => ipcRenderer.send("changePageProducao"),
     qualidadePage: () => ipcRenderer.send("changePageQA"),
-    qualidadeResultPageAP: () => ipcRenderer.send("changePageQAResultAP"),
-    qualidadeResultPageRP: () => ipcRenderer.send("changePageQAResultRP"),
+    qualidadeResultPage: () => ipcRenderer.send("changePageQAResult"),
 });
 
 contextBridge.exposeInMainWorld("authAPI", {

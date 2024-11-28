@@ -15,7 +15,8 @@ window.onload = async () => {
             qualidades[i].interior,
             qualidades[i].farol,
             qualidades[i].veiculoid,
-            qualidades[i].id
+            qualidades[i].id,
+            qualidades[i].status,
         );
         qualidadelist.push(qualidade);
     }
@@ -77,13 +78,22 @@ function statusfarol() {
         }
     }
 }
+function statusstatus() {
+    for (var i = 0; i < qualidadelist.length; i++) {
+        if (qualidadelist[i].getStatusQA() === true) {
+            return "Aprovado"
+        } else {
+            return "Reprovado"
+        }
+    }
+}
 
 function render() {
     var div = document.getElementById("secondmainstatus");
     div.innerHTML = "";
 
     div.innerHTML = `
-        <h2>Resultado: <span>Reprovado</span></h2>
+        <h2>Resultado: <span>${statusstatus()}</span></h2>
         <div class="results">
             <div class="result-up">
                 <div>

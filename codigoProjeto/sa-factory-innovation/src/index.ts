@@ -105,11 +105,7 @@ ipcMain.on("changePageQA", () => {
   mainWindow.loadURL(`http://localhost:3000/qualidade`);
 });
 
-ipcMain.on("changePageQAResultAP", () => {
-  mainWindow.loadURL(`http://localhost:3000/qualidadeResultado`)
-})
-
-ipcMain.on("changePageQAResultRP", () => {
+ipcMain.on("changePageQAResult", () => {
   mainWindow.loadURL(`http://localhost:3000/qualidadeResultado`)
 })
 
@@ -130,8 +126,8 @@ ipcMain.handle('findAllVeiculo', async () => {
 });
 
 ipcMain.handle("createQualidade", async (_: any, qualidade: any) => {
-  const {id, pneu, porta, motor, lataria, interior, farol, veiculoid} = qualidade;
-  const newQualidade = new Qualidade(pneu, porta, motor, lataria, interior, farol, veiculoid, id);
+  const {id, pneu, porta, motor, lataria, interior, farol, veiculoid, status} = qualidade;
+  const newQualidade = new Qualidade(pneu, porta, motor, lataria, interior, farol, veiculoid, status, id);
   new QualidadeRepository().save(newQualidade);
 });
 

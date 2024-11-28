@@ -22,7 +22,7 @@ export default class QualidadeRepository {
         try {
             this.connection.connect();
             const sql =
-                "insert into controle_qualidade (id, pneu, porta, motor, lataria, interior, farol, veiculo_id) values ($1, $2, $3, $4, $5, $6, $7, $8)";
+                "insert into controle_qualidade (id, pneu, porta, motor, lataria, interior, farol, veiculo_id, status, time) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
             const values = [
                 Qualidade.getId(),
                 Qualidade.getPneu(),
@@ -31,7 +31,9 @@ export default class QualidadeRepository {
                 Qualidade.getLataria(),
                 Qualidade.getIntereior(),
                 Qualidade.getFarol(),
-                Qualidade.getIdVeiculo()
+                Qualidade.getIdVeiculo(),
+                Qualidade.getStatusQA(),
+                Qualidade.getTime()
             ];
             await this.connection.query(sql, values);
         } catch (error) {
@@ -45,7 +47,7 @@ export default class QualidadeRepository {
     async findQualidade(){
         try {
             this.connection.connect();
-            const sql = "select * from controle_qualidade";
+            const sql = "select * from controle_qualidade order by time desc";
             const result = await this.connection.query(sql);
             return result.rows;
         } catch (error) {
