@@ -10,6 +10,7 @@ document.getElementById("aprovarButton")?.addEventListener("click", async (event
     event.preventDefault();
 
     var veiculo_id = (document.getElementById("combobox") as HTMLSelectElement);
+    var trimestre = (document.getElementById("combotri") as HTMLSelectElement);
     var pneu = document.getElementById("checkPneu") as HTMLInputElement;
     var lataria = document.getElementById("checkLataria") as HTMLInputElement;
     var porta = document.getElementById("checkPorta") as HTMLInputElement;
@@ -18,9 +19,10 @@ document.getElementById("aprovarButton")?.addEventListener("click", async (event
     var farol = document.getElementById("checkFarol") as HTMLInputElement;
 
     var id = veiculo_id.value;
+    var trimest = trimestre.value;
     var status = true;
 
-    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status);
+    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, trimest);
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })
@@ -29,6 +31,7 @@ document.getElementById("reprovarButton")?.addEventListener("click", async (even
     event.preventDefault();
 
     var veiculo_id = (document.getElementById("combobox") as HTMLSelectElement);
+    var trimestre = (document.getElementById("combotri") as HTMLSelectElement);
     var pneu = document.getElementById("checkPneu") as HTMLInputElement;
     var lataria = document.getElementById("checkLataria") as HTMLInputElement;
     var porta = document.getElementById("checkPorta") as HTMLInputElement;
@@ -37,9 +40,10 @@ document.getElementById("reprovarButton")?.addEventListener("click", async (even
     var farol = document.getElementById("checkFarol") as HTMLInputElement;
 
     var id = veiculo_id.value;
+    var trimest = trimestre.value;
     var status = false;
 
-    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status);
+    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, trimest);
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })
@@ -62,6 +66,7 @@ window.onload = async () => {
         listVeiculo.push(veiculoo);
     }
     ComboBox();
+    ComboTri();
 }
 
 function ComboBox() {
@@ -73,6 +78,17 @@ function ComboBox() {
             <option value="${listVeiculo[i].getId()}">${listVeiculo[i].getModelo()}</option>
         `;
     }
+}
+
+function ComboTri() {
+    var combobox = document.getElementById("combotri");
+    combobox.innerHTML = `
+    <option value="" disabled="true">Selecione um Trimestre</option>
+    <option value="Primeiro" >1º Trimestre</option>
+    <option value="Segundo" >2º Trimestre</option>
+    <option value="Terceiro" >3º Trimestre</option>
+    <option value="Quarto" >4º Trimestre</option>
+    `;
 }
 
 function estoquePage() {

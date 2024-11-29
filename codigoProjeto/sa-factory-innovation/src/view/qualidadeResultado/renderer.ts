@@ -15,8 +15,9 @@ window.onload = async () => {
             qualidades[i].interior,
             qualidades[i].farol,
             qualidades[i].veiculoid,
+            qualidades[i].stato,
+            qualidades[i].trimestre,
             qualidades[i].id,
-            qualidades[i].status,
         );
         qualidadelist.push(qualidade);
     }
@@ -27,63 +28,63 @@ window.onload = async () => {
 function statuspneu() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getPneu() === true) {
-            return "Aprovado"
+            return `<h3 class="aproved" id="PneuR">Aprovado</h3>`
         } else {
-            return "Reprovado"
+            return `<h3 id="PneuR">Reprovado</h3>`
         }
     }
 }
 function statuslataria() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getLataria() === true) {
-            return "Aprovado"
+            return `<h3 class="aproved" id="LatariaR">Aprovado</h3>`
         } else {
-            return "Reprovado"
+            return `<h3 id="LatariaR">Reprovado</h3>`
         }
     }
 }
 function statusporta() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getPorta() === true) {
-            return "Aprovado"
+            return `<h3 class="aproved" id="PortaR">Aprovado</h3>`
         } else {
-            return "Reprovado"
+            return `<h3 id="PortaR">Reprovado</h3>`
         }
     }
 }
 function statusinterior() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getIntereior() === true) {
-            return "Aprovado"
+            return `<h3 class="aproved" id="InteriorR">Aprovado</h3>`
         } else {
-            return "Reprovado"
+            return `<h3 id="InteriorR">Reprovado</h3>`
         }
     }
 }
 function statusmotor() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getMotor() === true) {
-            return "Aprovado"
+            return `<h3 class="aproved" id="MotorR">Aprovado</h3>`
         } else {
-            return "Reprovado"
+            return `<h3 id="MotorR">Reprovado</h3>`
         }
     }
 }
 function statusfarol() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getFarol() === true) {
-            return "Aprovado"
+            return `<h3 class="aproved" id="FarolR">Aprovado</h3>`
         } else {
-            return "Reprovado"
+            return `<h3 id="FarolR">Reprovado</h3>`
         }
     }
 }
-function statusstatus() {
+function statustotal() {
     for (var i = 0; i < qualidadelist.length; i++) {
         if (qualidadelist[i].getStatusQA() === true) {
-            return "Aprovado"
+            return `<span class="aprovedh2">Aprovado</span>`
         } else {
-            return "Reprovado"
+            return `<span>Reprovado</span>`
         }
     }
 }
@@ -93,34 +94,34 @@ function render() {
     div.innerHTML = "";
 
     div.innerHTML = `
-        <h2>Resultado: <span>${statusstatus()}</span></h2>
+        <h2>Resultado: ${statustotal()}</h2>
         <div class="results">
             <div class="result-up">
                 <div>
                     <label for="PneuR">Pneu:</label>
-                    <h3 id="PneuR">${statuspneu()}</h3>
+                    ${statuspneu()}
                 </div>
                 <div>
                     <label for="PortaR">Porta:</label>
-                    <h3 id="PortaR">${statusporta()}</h3>
+                    ${statusporta()}
                 </div>
                 <div>
                     <label for="MotorR">Motor:</label>
-                    <h3 id="MotorR">${statusmotor()}</h3>
+                    ${statusmotor()}
                 </div>
             </div>
             <div class="result-bottom">
                 <div>
                     <label for="LatariaR">Lataria:</label>
-                    <h3 id="LatariaR">${statuslataria()}</h3>
+                    ${statuslataria()}
                 </div>
                 <div>
                     <label for="InteriorR">Interior:</label>
-                    <h3 id="InteriorR">${statusinterior()}</h3>
+                    ${statusinterior()}
                 </div>
                 <div>
                     <label for="FarolR">Farol:</label>
-                    <h3 id="FarolR">${statusfarol()}</h3>
+                    ${statusfarol()}
                 </div>
             </div>
         </div>

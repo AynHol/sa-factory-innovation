@@ -48,11 +48,16 @@ main {
     margin-bottom: 5px;
 }
 
-#combobox {
+.combos {
+    display: flex;
+    flex-direction: column;
+}
+
+#combobox, #combotri {
     outline-style: none;
     border: 1px solid #7e7e7e;
     border-radius: 16px;
-    margin-left: 30px;
+    margin: auto;
 }
 
 .checks {

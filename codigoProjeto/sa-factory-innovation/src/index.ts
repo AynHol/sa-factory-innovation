@@ -126,8 +126,8 @@ ipcMain.handle('findAllVeiculo', async () => {
 });
 
 ipcMain.handle("createQualidade", async (_: any, qualidade: any) => {
-  const {id, pneu, porta, motor, lataria, interior, farol, veiculoid, status} = qualidade;
-  const newQualidade = new Qualidade(pneu, porta, motor, lataria, interior, farol, veiculoid, status, id);
+  const {id, pneu, porta, motor, lataria, interior, farol, veiculoid, stato, trimestre} = qualidade;
+  const newQualidade = new Qualidade(pneu, porta, motor, lataria, interior, farol, veiculoid, stato, trimestre, id);
   new QualidadeRepository().save(newQualidade);
 });
 
@@ -139,4 +139,12 @@ ipcMain.handle("createProducao", async (_: any, producao: any) => {
 
 ipcMain.handle('findQualidade', async () => {
   return await new QualidadeRepository().findQualidade();
+});
+
+ipcMain.handle('findQualidadeAll', async () => {
+  return await new QualidadeRepository().findQualidadeAll();
+});
+
+ipcMain.handle('findQualidadeTrimestre', async (_: any, trimestre: string) => {
+  return await new QualidadeRepository().findQualidadeTrimestre(trimestre);
 });

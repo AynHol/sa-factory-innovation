@@ -52,8 +52,8 @@ main {
     color: #e72828;
 }
 
-.aproved .secondmain h2 span {
-    color: #3cc73c;
+.aprovedh2 {
+    color: #3cc73c !important;
 }
 
 .results {
@@ -76,6 +76,6 @@ main {
     padding: 5px;
 }
 
-.aproved .result-up h3, .aproved .result-bottom h3 {
-    background-color: #3cc73c;
+.aproved {
+    background-color: #3cc73c !important;
 }

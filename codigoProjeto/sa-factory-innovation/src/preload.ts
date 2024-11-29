@@ -13,6 +13,8 @@ contextBridge.exposeInMainWorld("bankAPI", {
     createQualidade: async (qualidade: Qualidade) => await ipcRenderer.invoke("createQualidade", qualidade),
     createProducao: async (producao: Producao) => await ipcRenderer.invoke("createProducao", producao),
     findQualidade: async () => await ipcRenderer.invoke('findQualidade'),
+    findQualidadeAll: async () => await ipcRenderer.invoke('findQualidadeAll'),
+    findQualidadeTrimestre: async (trimestre: string) => await ipcRenderer.invoke('findQualidadeTrimestre', trimestre),
 });
 
 contextBridge.exposeInMainWorld("navigateAPI", {
