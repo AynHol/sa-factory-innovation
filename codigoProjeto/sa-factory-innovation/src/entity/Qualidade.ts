@@ -11,9 +11,9 @@ export default class Qualidade {
     private veiculoid: string;
     private stato: boolean;
     private time: Date;
-    private trimestre: string;
+    private trimestre: number;
 
-    constructor(pneu: boolean, porta: boolean, motor: boolean, lataria: boolean, interior: boolean, farol: boolean, veiculoid: string, stato: boolean, trimestre: string, id?: string) {
+    constructor(pneu: boolean, porta: boolean, motor: boolean, lataria: boolean, interior: boolean, farol: boolean, veiculoid: string, stato: boolean, trimestre: number, id?: string) {
         this.id = id === undefined ? uuid(): id;
         this.pneu = pneu;
         this.porta = porta;

@@ -9,11 +9,11 @@ export default class QualidadeRepository {
             this.connection = new Client({
                 host: "localhost",
                 port: 5432,
-                database: "sistema_factory",
-                // database: "sistema_sa",
+                // database: "sistema_factory",
+                database: "sistema_sa",
                 user: "postgres",
-                password: "senai",
-                // password: "alder",
+                // password: "senai",
+                password: "alder",
             });
         }
     }
@@ -22,7 +22,7 @@ export default class QualidadeRepository {
         try {
             this.connection.connect();
             const sql =
-                "insert into controle_qualidade (id, pneu, porta, motor, lataria, interior, farol, veiculo_id, stato, time, trimest) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
+                "insert into controle_qualidade (id, pneu, porta, motor, lataria, interior, farol, veiculo_id, stato, time, trimestre) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
             const values = [
                 Qualidade.getId(),
                 Qualidade.getPneu(),

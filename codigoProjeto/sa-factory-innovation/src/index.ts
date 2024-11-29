@@ -132,8 +132,8 @@ ipcMain.handle("createQualidade", async (_: any, qualidade: any) => {
 });
 
 ipcMain.handle("createProducao", async (_: any, producao: any) => {
-  const {id, modelo, chassi, cor, ano_fabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id} = producao;
-  const newProducao = new Producao(modelo, chassi, cor, ano_fabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id, id);
+  const {id, modelo, chassi, cor, anoFabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id} = producao;
+  const newProducao = new Producao(modelo, chassi, cor, anoFabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id, id);
   new ProducaoRepository().save(newProducao);
 });
 

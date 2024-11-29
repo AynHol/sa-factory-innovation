@@ -77,29 +77,190 @@ function QAqtdp() {
     return qtdplus;
 }
 
-function QAqtdTp() {
+function QAqtdTm(trimestre: number) {
+    var qtdminust = 0;
+
+    if (trimestre === 1) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === false  && qualidadelist[i].getTrimestre() === 1) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getLataria() === false  && qualidadelist[i].getTrimestre() === 1) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getPorta() === false  && qualidadelist[i].getTrimestre() === 1) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === false  && qualidadelist[i].getTrimestre() === 1) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getMotor() === false  && qualidadelist[i].getTrimestre() === 1) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getFarol() === false  && qualidadelist[i].getTrimestre() === 1) {
+                qtdminust += 1;
+            }
+        } return qtdminust; 
+    }
+    if (trimestre === 2) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === false  && qualidadelist[i].getTrimestre() === 2) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getLataria() === false  && qualidadelist[i].getTrimestre() === 2) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getPorta() === false  && qualidadelist[i].getTrimestre() === 2) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === false  && qualidadelist[i].getTrimestre() === 2) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getMotor() === false  && qualidadelist[i].getTrimestre() === 2) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getFarol() === false  && qualidadelist[i].getTrimestre() === 2) {
+                qtdminust += 1;
+            }
+        } return qtdminust; 
+    }
+    if (trimestre === 3) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === false  && qualidadelist[i].getTrimestre() === 3) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getLataria() === false  && qualidadelist[i].getTrimestre() === 3) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getPorta() === false  && qualidadelist[i].getTrimestre() === 3) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === false  && qualidadelist[i].getTrimestre() === 3) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getMotor() === false  && qualidadelist[i].getTrimestre() === 3) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getFarol() === false  && qualidadelist[i].getTrimestre() === 3) {
+                qtdminust += 1;
+            }
+        } return qtdminust; 
+    }
+    if (trimestre === 4) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === false  && qualidadelist[i].getTrimestre() === 4) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getLataria() === false  && qualidadelist[i].getTrimestre() === 4) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getPorta() === false  && qualidadelist[i].getTrimestre() === 4) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === false  && qualidadelist[i].getTrimestre() === 4) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getMotor() === false  && qualidadelist[i].getTrimestre() === 4) {
+                qtdminust += 1;
+            }
+            if (qualidadelist[i].getFarol() === false  && qualidadelist[i].getTrimestre() === 4) {
+                qtdminust += 1;
+            }
+        } return qtdminust; 
+    }
+}
+
+function QAqtdTp(trimestre: number) {
     var qtdplust = 0;
 
+    if (trimestre === 1) {
         for (var i = 0; i < qualidadelist.length; i++) {
-            if (qualidadelist[i].getTrimestre() === 'Primeiro') {
+            if (qualidadelist[i].getPneu() === true  && qualidadelist[i].getTrimestre() === 1) {
                 qtdplust += 1;
             }
-            if (qualidadelist[i].getLataria() === true  && qualidadelist[i].getTrimestre() === 'Primeiro') {
+            if (qualidadelist[i].getLataria() === true  && qualidadelist[i].getTrimestre() === 1) {
                 qtdplust += 1;
             }
-            if (qualidadelist[i].getPorta() === true  && qualidadelist[i].getTrimestre() === 'Primeiro') {
+            if (qualidadelist[i].getPorta() === true  && qualidadelist[i].getTrimestre() === 1) {
                 qtdplust += 1;
             }
-            if (qualidadelist[i].getIntereior() === true  && qualidadelist[i].getTrimestre() === 'Primeiro') {
+            if (qualidadelist[i].getIntereior() === true  && qualidadelist[i].getTrimestre() === 1) {
                 qtdplust += 1;
             }
-            if (qualidadelist[i].getMotor() === true  && qualidadelist[i].getTrimestre() === 'Primeiro') {
+            if (qualidadelist[i].getMotor() === true  && qualidadelist[i].getTrimestre() === 1) {
                 qtdplust += 1;
             }
-            if (qualidadelist[i].getFarol() === true  && qualidadelist[i].getTrimestre() === 'Primeiro') {
+            if (qualidadelist[i].getFarol() === true  && qualidadelist[i].getTrimestre() === 1) {
                 qtdplust += 1;
             }
         } return qtdplust; 
+    }
+    if (trimestre === 2) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === true  && qualidadelist[i].getTrimestre() === 2) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getLataria() === true  && qualidadelist[i].getTrimestre() === 2) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getPorta() === true  && qualidadelist[i].getTrimestre() === 2) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === true  && qualidadelist[i].getTrimestre() === 2) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getMotor() === true  && qualidadelist[i].getTrimestre() === 2) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getFarol() === true  && qualidadelist[i].getTrimestre() === 2) {
+                qtdplust += 1;
+            }
+        } return qtdplust; 
+    }
+    if (trimestre === 3) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === true  && qualidadelist[i].getTrimestre() === 3) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getLataria() === true  && qualidadelist[i].getTrimestre() === 3) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getPorta() === true  && qualidadelist[i].getTrimestre() === 3) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === true  && qualidadelist[i].getTrimestre() === 3) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getMotor() === true  && qualidadelist[i].getTrimestre() === 3) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getFarol() === true  && qualidadelist[i].getTrimestre() === 3) {
+                qtdplust += 1;
+            }
+        } return qtdplust; 
+    }
+    if (trimestre === 4) {
+        for (var i = 0; i < qualidadelist.length; i++) {
+            if (qualidadelist[i].getPneu() === true  && qualidadelist[i].getTrimestre() === 4) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getLataria() === true  && qualidadelist[i].getTrimestre() === 4) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getPorta() === true  && qualidadelist[i].getTrimestre() === 4) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getIntereior() === true  && qualidadelist[i].getTrimestre() === 4) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getMotor() === true  && qualidadelist[i].getTrimestre() === 4) {
+                qtdplust += 1;
+            }
+            if (qualidadelist[i].getFarol() === true  && qualidadelist[i].getTrimestre() === 4) {
+                qtdplust += 1;
+            }
+        } return qtdplust; 
+    }
 }
 
 function desenharGraficoLinha() {
@@ -146,13 +307,13 @@ function desenharGrafico() {
                 name: "Aprovado",
                 type: "bar",
                 color: ["#3ba94c"],
-                data: [QAqtdTp(), 20, 30, 40],
+                data: [QAqtdTp(1), QAqtdTp(2), QAqtdTp(3), QAqtdTp(4)],
             },
             {
                 name: "Reprovado",
                 type: "bar",
                 color: ["#eb2a23"],
-                data: [15, 15, 23, 43],
+                data: [QAqtdTm(1), QAqtdTm(2), QAqtdTm(3), QAqtdTm(4)],
             },
         ],
     };

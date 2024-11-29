@@ -3,7 +3,6 @@ import "../../reset.css";
 import Estoque from "../../entity/Estoque";
 import Producao from "../../entity/Producao";
 
-
 var listProduto: Estoque[] = []
 var listproducao: Producao[] = []
 
@@ -14,11 +13,16 @@ document.getElementById("buttonCadastroProduction")?.addEventListener("click", a
     var chassi = document.getElementById("chassiinput") as HTMLInputElement;
     var cor = document.getElementById("corinput") as HTMLInputElement;
     var ano = document.getElementById("anoinput") as HTMLInputElement;
-    var pneubox = document.getElementById("combobox1") as HTMLSelectElement;
-    var portabox = document.getElementById("combobox2") as HTMLSelectElement;
-    var motorbox = document.getElementById("combobox3") as HTMLSelectElement;
-    var farolbox = document.getElementById("combobox4") as HTMLSelectElement;
-    var extrabox = document.getElementById("combobox5") as HTMLSelectElement;
+    var pneubox = (document.getElementById("combobox1") as HTMLSelectElement);
+    var portabox = (document.getElementById("combobox2") as HTMLSelectElement);
+    var motorbox = (document.getElementById("combobox3") as HTMLSelectElement);
+    var farolbox = (document.getElementById("combobox4") as HTMLSelectElement);
+    var extrabox = (document.getElementById("combobox5") as HTMLSelectElement);
+
+    console.log(motorbox.value)
+    console.log(pneubox.value)
+    var motor = motorbox.value
+    console.log(motor)
 
     const newVeiculo = new Producao(modelo.value, chassi.value, cor.value, Number(ano.value), motorbox.value, portabox.value, pneubox.value, farolbox.value, extrabox.value);
     listproducao.push(newVeiculo);
@@ -33,7 +37,7 @@ window.onload = async () => {
             estoque[i].descricao,
             estoque[i].quantidade,
             estoque[i].fabricante,
-            estoque[i].id
+            estoque[i].id,
         );
         listProduto.push(produto);
     }
@@ -43,10 +47,10 @@ window.onload = async () => {
 function ComboBox() {
     var comboboxPneu = document.getElementById("combobox1");
     comboboxPneu.innerHTML = `<option value="" disabled="true">Selecione um Pneu</option>`;
-    var comboboxPorta = document.getElementById("combobox2");
-    comboboxPorta.innerHTML = `<option value="" disabled="true">Selecione uma Porta</option>`;
     var comboboxMotor = document.getElementById("combobox3");
     comboboxMotor.innerHTML = `<option value="" disabled="true">Selecione um Motor</option>`;
+    var comboboxPorta = document.getElementById("combobox2");
+    comboboxPorta.innerHTML = `<option value="" disabled="true">Selecione uma Porta</option>`;
     var comboboxFarol = document.getElementById("combobox4");
     comboboxFarol.innerHTML = `<option value="" disabled="true">Selecione um Farol</option>`;
     var comboboxExtra = document.getElementById("combobox5");

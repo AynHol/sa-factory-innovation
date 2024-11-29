@@ -22,7 +22,7 @@ document.getElementById("aprovarButton")?.addEventListener("click", async (event
     var trimest = trimestre.value;
     var status = true;
 
-    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, trimest);
+    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, Number(trimest));
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })
@@ -43,7 +43,7 @@ document.getElementById("reprovarButton")?.addEventListener("click", async (even
     var trimest = trimestre.value;
     var status = false;
 
-    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, trimest);
+    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, Number(trimest));
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })
@@ -84,10 +84,10 @@ function ComboTri() {
     var combobox = document.getElementById("combotri");
     combobox.innerHTML = `
     <option value="" disabled="true">Selecione um Trimestre</option>
-    <option value="Primeiro" >1º Trimestre</option>
-    <option value="Segundo" >2º Trimestre</option>
-    <option value="Terceiro" >3º Trimestre</option>
-    <option value="Quarto" >4º Trimestre</option>
+    <option value="1" >1º Trimestre</option>
+    <option value="2" >2º Trimestre</option>
+    <option value="3" >3º Trimestre</option>
+    <option value="4" >4º Trimestre</option>
     `;
 }
 
