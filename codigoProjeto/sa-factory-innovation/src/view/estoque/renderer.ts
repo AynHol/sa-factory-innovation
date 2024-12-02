@@ -1,8 +1,7 @@
 import "./estoque.css";
 import "../../reset.css";
-import Estoque from "../../entity/Estoque";
 
-var estoque: Estoque[] = [];
+var estoque: any[] = [];
 
 document.getElementById("cadastrarButton")?.addEventListener("click", async (event: MouseEvent) => {
     event.preventDefault();
@@ -12,14 +11,12 @@ document.getElementById("cadastrarButton")?.addEventListener("click", async (eve
     var quantidade = document.getElementById("quantidade") as HTMLInputElement
     var descricao = document.getElementById("descricao") as HTMLInputElement
 
-    const newEstoque = new Estoque(
-        nome.value,
-        descricao.value,
-        Number(quantidade.value),
-        fabricante.value
-    );
-
-    console.log(newEstoque)
+    const newEstoque =  {
+        nome: nome.value,
+        descricao: descricao.value,
+        quantidade: Number(quantidade.value),
+        fabricante: fabricante.value
+    }
 
     estoque.push(newEstoque);
     (window as any).bankAPI.createEstoque(newEstoque)

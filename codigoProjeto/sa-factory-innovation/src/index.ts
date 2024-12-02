@@ -31,11 +31,11 @@ const createWindow = (): void => {
   });
 
   // and load the index.html of the app.
-  // mainWindow.loadURL("http://localhost:3000/login");
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+  mainWindow.loadURL("http://localhost:3000/login");
+  // mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -90,8 +90,8 @@ ipcMain.handle("createEstoque", async (_: any, estoque: any) => {
 });
 
 ipcMain.handle("createProducao", async (_: any, producao: any) => {
-  const {id, modelo, chassi, cor, anoFabricacao, motorid, portasid, pneusid, farolid, pecasid} = producao;
-  const newProducao = new Producao(modelo, chassi, cor, anoFabricacao, motorid, portasid, pneusid, farolid, pecasid, id);
+  const {id, modelo, chassi, cor, ano_fabricacao, motorid, portasid, pneusid, farolid, pecasid} = producao;
+  const newProducao = new Producao(modelo, chassi, cor, ano_fabricacao, motorid, portasid, pneusid, farolid, pecasid, id);
   new ProducaoRepository().save(newProducao);
 });
 

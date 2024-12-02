@@ -9,11 +9,10 @@ export default class UserRepository {
             this.connection = new Client({
                 host: "localhost",
                 port: 5432,
-                // database: "sistema_factory",
-                database: "sistema_sa",
+                database: "sistema_factory",
                 user: "postgres",
-                // password: "senai",
-                password: "alder",
+                password: "senai",
+                
             });
         }
     }

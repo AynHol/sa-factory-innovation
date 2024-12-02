@@ -5,19 +5,19 @@ export default class Producao {
     private modelo: string;
     private chassi: string;
     private cor: string;
-    private anoFabricacao: number;
+    private ano_fabricacao: number;
     private motorid: string;
     private portaid: string;
     private pneuid: string;
     private farolid: string;
     private extraid: string;
 
-    constructor(modelo: string, chassi: string, cor: string, anoFabricacao: number, motorid: string, portaid: string, pneuid: string, farolid: string, extraid: string ,id?: string) {
+    constructor(modelo: string, chassi: string, cor: string, ano_fabricacao: number, motorid: string, portaid: string, pneuid: string, farolid: string, extraid: string ,id?: string) {
         this.id = id === undefined ? uuid(): id;
         this.modelo = modelo;
         this.chassi = chassi;
         this.cor = cor;
-        this.anoFabricacao = anoFabricacao;
+        this.ano_fabricacao = ano_fabricacao;
         this.motorid = motorid;
         this.portaid = portaid;
         this.pneuid = pneuid;
@@ -38,7 +38,7 @@ export default class Producao {
         return this.cor;
     }
     public getAno() {
-        return this.anoFabricacao;
+        return this.ano_fabricacao;
     }
     public getIdMotor() {
         return this.motorid

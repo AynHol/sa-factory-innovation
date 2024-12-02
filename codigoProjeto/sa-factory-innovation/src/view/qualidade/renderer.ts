@@ -1,10 +1,9 @@
 import "./qualidade.css";
 import "../../reset.css";
 import Producao from "../../entity/Producao";
-import Qualidade from "../../entity/Qualidade";
 
 var listVeiculo: Producao[] = [];
-var listQA: Qualidade[] = [];
+var listQA: any[] = [];
 
 document.getElementById("aprovarButton")?.addEventListener("click", async (event: MouseEvent) => {
     event.preventDefault();
@@ -18,11 +17,18 @@ document.getElementById("aprovarButton")?.addEventListener("click", async (event
     var motor = document.getElementById("checkMotor") as HTMLInputElement;
     var farol = document.getElementById("checkFarol") as HTMLInputElement;
 
-    var id = veiculo_id.value;
-    var trimest = trimestre.value;
-    var status = true;
+    const newqualidade = {
+        pneu: pneu.checked,
+        porta: porta.checked,
+        motor: motor.checked,
+        lataria: lataria.checked,
+        interior: interior.checked,
+        farol: farol.checked,
+        veiculoid: veiculo_id.value,
+        stato: true,
+        trimestre: Number(trimestre.value)
+    }
 
-    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, Number(trimest));
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })
@@ -39,11 +45,18 @@ document.getElementById("reprovarButton")?.addEventListener("click", async (even
     var motor = document.getElementById("checkMotor") as HTMLInputElement;
     var farol = document.getElementById("checkFarol") as HTMLInputElement;
 
-    var id = veiculo_id.value;
-    var trimest = trimestre.value;
-    var status = false;
+    const newqualidade = {
+        pneu: pneu.checked,
+        porta: porta.checked,
+        motor: motor.checked,
+        lataria: lataria.checked,
+        interior: interior.checked,
+        farol: farol.checked,
+        veiculoid: veiculo_id.value,
+        stato: false,
+        trimestre: Number(trimestre.value)
+    }
 
-    const newqualidade = new Qualidade(pneu.checked, porta.checked, motor.checked, lataria.checked, interior.checked, farol.checked, id, status, Number(trimest));
     listQA.push(newqualidade);
     (window as any).bankAPI.createQualidade(newqualidade);
 })

@@ -1,10 +1,9 @@
 import "./producao.css";
 import "../../reset.css";
 import Estoque from "../../entity/Estoque";
-import Producao from "../../entity/Producao";
 
 var listProduto: Estoque[] = []
-var listproducao: Producao[] = []
+var listproducao: any[] = []
 
 document.getElementById("buttonCadastroProduction")?.addEventListener("click", async (event: MouseEvent) => {
     event.preventDefault();
@@ -19,7 +18,18 @@ document.getElementById("buttonCadastroProduction")?.addEventListener("click", a
     var farolbox = (document.getElementById("combobox4") as HTMLSelectElement);
     var extrabox = (document.getElementById("combobox5") as HTMLSelectElement);
 
-    const newVeiculo = new Producao(modelo.value, chassi.value, cor.value, Number(ano.value), motorbox.value, portabox.value, pneubox.value, farolbox.value, extrabox.value);
+    const newVeiculo = {
+        modelo: modelo.value,
+        chassi: chassi.value,
+        cor: cor.value,
+        ano_fabricacao: Number(ano.value),
+        motorid: motorbox.value,
+        portaid: portabox.value,
+        pneuid: pneubox.value,
+        farolid: farolbox.value,
+        extraid: extrabox.value
+    }
+
     listproducao.push(newVeiculo);
     (window as any).bankAPI.createProducao(newVeiculo);
 })
