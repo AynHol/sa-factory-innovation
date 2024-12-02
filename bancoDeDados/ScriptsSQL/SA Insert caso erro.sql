@@ -1,0 +1,1 @@
+Insert into veiculo (id, modelo, chassi, cor, ano_fabricacao, motorid, portasid, pneusid, farolid, pecasid) values ('d6342c25-945d-4430-bf93-45daa6f95b21', 'Uno', '685 YmAGFn ac BW7334', 'Branco', '2023', 'ID MOTOR', 'ID PORTAS', 'ID PNEUS', 'ID FAROL', 'ID PEÇAS')

@@ -33,7 +33,10 @@ create table controle_qualidade (
 	interior boolean not null,
 	farol boolean not null,
 	veiculo_id uuid not null,
-	foreign key (veiculo_id) references veiculo(id)
+	foreign key (veiculo_id) references veiculo(id),
+	stato boolean not null,
+	time timestamp not null,
+	trimestre integer not null
 );
 
 create table conta (
