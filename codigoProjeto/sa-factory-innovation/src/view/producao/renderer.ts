@@ -24,10 +24,10 @@ document.getElementById("buttonCadastroProduction")?.addEventListener("click", a
         cor: cor.value,
         ano_fabricacao: Number(ano.value),
         motorid: motorbox.value,
-        portaid: portabox.value,
-        pneuid: pneubox.value,
+        portasid: portabox.value,
+        pneusid: pneubox.value,
         farolid: farolbox.value,
-        extraid: extrabox.value
+        pecasid: extrabox.value
     }
 
     listproducao.push(newVeiculo);

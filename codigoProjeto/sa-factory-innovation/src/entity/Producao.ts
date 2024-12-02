@@ -10,9 +10,9 @@ export default class Producao {
     private portaid: string;
     private pneuid: string;
     private farolid: string;
-    private extraid: string;
+    private pecasid: string;
 
-    constructor(modelo: string, chassi: string, cor: string, ano_fabricacao: number, motorid: string, portaid: string, pneuid: string, farolid: string, extraid: string ,id?: string) {
+    constructor(modelo: string, chassi: string, cor: string, ano_fabricacao: number, motorid: string, portaid: string, pneuid: string, farolid: string, pecasid: string ,id?: string) {
         this.id = id === undefined ? uuid(): id;
         this.modelo = modelo;
         this.chassi = chassi;
@@ -22,7 +22,7 @@ export default class Producao {
         this.portaid = portaid;
         this.pneuid = pneuid;
         this.farolid = farolid;
-        this.extraid = extraid;
+        this.pecasid = pecasid;
     }
 
     public getId() {
@@ -53,6 +53,6 @@ export default class Producao {
         return this.farolid;
     }
     public getIdExtra() {
-        return this.extraid;
+        return this.pecasid;
     }
 }

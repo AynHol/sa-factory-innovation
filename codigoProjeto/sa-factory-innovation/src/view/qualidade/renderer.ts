@@ -73,7 +73,7 @@ window.onload = async () => {
             veiculo[i].portaid,
             veiculo[i].pneuid,
             veiculo[i].farolid,
-            veiculo[i].extraid,
+            veiculo[i].pecasid,
             veiculo[i].id,
         );
         listVeiculo.push(veiculoo);
