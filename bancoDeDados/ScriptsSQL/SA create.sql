@@ -12,16 +12,16 @@ create table veiculo (
 	chassi varchar(20) unique not null,
 	cor varchar(50) not null,
 	ano_fabricacao integer not null,
-	motor_id uuid not null,
-	foreign key (motor_id) references produto(id),
-	portas_id uuid not null,
-	foreign key (portas_id) references produto(id),
-	pneus_id uuid not null,
-	foreign key (pneus_id) references produto(id),
-	varol_id uuid not null,
-	foreign key (varol_id) references produto(id),
-	pecas_id uuid not null,
-	foreign key (pecas_id) references produto(id)
+	motorid uuid not null,
+	foreign key (motorid) references produto(id),
+	portasid uuid not null,
+	foreign key (portasid) references produto(id),
+	pneusid uuid not null,
+	foreign key (pneusid) references produto(id),
+	farolid uuid not null,
+	foreign key (farolid) references produto(id),
+	pecasid uuid not null,
+	foreign key (pecasid) references produto(id)
 );
 
 create table controle_qualidade (
