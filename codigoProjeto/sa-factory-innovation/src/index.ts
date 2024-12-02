@@ -89,6 +89,12 @@ ipcMain.handle("createEstoque", async (_: any, estoque: any) => {
   new EstoqueRepository().save(newEstoque);
 });
 
+ipcMain.handle("createProducao", async (_: any, producao: any) => {
+  const {id, modelo, chassi, cor, anoFabricacao, motorid, portasid, pneusid, farolid, pecasid} = producao;
+  const newProducao = new Producao(modelo, chassi, cor, anoFabricacao, motorid, portasid, pneusid, farolid, pecasid, id);
+  new ProducaoRepository().save(newProducao);
+});
+
 ipcMain.on("changePageEstoque", () => {
   mainWindow.loadURL(`http://localhost:3000/estoque`);
 });
@@ -129,12 +135,6 @@ ipcMain.handle("createQualidade", async (_: any, qualidade: any) => {
   const {id, pneu, porta, motor, lataria, interior, farol, veiculoid, stato, trimestre} = qualidade;
   const newQualidade = new Qualidade(pneu, porta, motor, lataria, interior, farol, veiculoid, stato, trimestre, id);
   new QualidadeRepository().save(newQualidade);
-});
-
-ipcMain.handle("createProducao", async (_: any, producao: any) => {
-  const {id, modelo, chassi, cor, anoFabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id} = producao;
-  const newProducao = new Producao(modelo, chassi, cor, anoFabricacao, motor_id, portas_id, pneus_id, farol_id, pecas_id, id);
-  new ProducaoRepository().save(newProducao);
 });
 
 ipcMain.handle('findQualidade', async () => {

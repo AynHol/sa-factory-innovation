@@ -40,19 +40,19 @@ export default class Producao {
     public getAno() {
         return this.anoFabricacao;
     }
-    public getMotor() {
-        return this.motorid;
+    public getIdMotor() {
+        return this.motorid
     }
-    public getPorta() {
+    public getIdPorta() {
         return this.portaid;
     }
-    public getPneu() {
+    public getIdPneu() {
         return this.pneuid;
     }
-    public getFarol() {
+    public getIdFarol() {
         return this.farolid;
     }
-    public getExtra() {
+    public getIdExtra() {
         return this.extraid;
     }
 }

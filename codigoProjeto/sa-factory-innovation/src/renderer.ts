@@ -23,7 +23,7 @@ window.onload = async () => {
         qualidadelist.push(qualidade);
     }
     desenharGrafico();
-    desenharGraficoLinha();
+    // desenharGraficoLinha();
     desenharGraficoPizza();
 };
 
@@ -263,23 +263,23 @@ function QAqtdTp(trimestre: number) {
     }
 }
 
-function desenharGraficoLinha() {
-    const teste = document.getElementById("linha") as HTMLDivElement;
-    const chart = echarts.init(teste);
-    const option = {
-        title: { text: "Veículos Produzidos", x: "center" },
-        xAxis: { data: ["2020", "2021", "2022", "2023", "2024"] },
-        yAxis: { type: "value" },
-        tooltip: { trigger: "item", formatter: "{b}: {c}" },
-        series: [
-            {
-                type: "line",
-                data: [100, 354, 234, 70, 524],
-            },
-        ],
-    };
-    chart.setOption(option);
-}
+// function desenharGraficoLinha() {
+//     const teste = document.getElementById("linha") as HTMLDivElement;
+//     const chart = echarts.init(teste);
+//     const option = {
+//         title: { text: "Veículos Produzidos", x: "center" },
+//         xAxis: { data: ["2020", "2021", "2022", "2023", "2024"] },
+//         yAxis: { type: "value" },
+//         tooltip: { trigger: "item", formatter: "{b}: {c}" },
+//         series: [
+//             {
+//                 type: "line",
+//                 data: [100, 354, 234, 70, 524],
+//             },
+//         ],
+//     };
+//     chart.setOption(option);
+// }
 
 function desenharGrafico() {
     const teste = document.getElementById("barra") as HTMLDivElement;

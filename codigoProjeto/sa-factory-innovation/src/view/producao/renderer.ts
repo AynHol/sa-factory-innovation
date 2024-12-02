@@ -19,11 +19,6 @@ document.getElementById("buttonCadastroProduction")?.addEventListener("click", a
     var farolbox = (document.getElementById("combobox4") as HTMLSelectElement);
     var extrabox = (document.getElementById("combobox5") as HTMLSelectElement);
 
-    console.log(motorbox.value)
-    console.log(pneubox.value)
-    var motor = motorbox.value
-    console.log(motor)
-
     const newVeiculo = new Producao(modelo.value, chassi.value, cor.value, Number(ano.value), motorbox.value, portabox.value, pneubox.value, farolbox.value, extrabox.value);
     listproducao.push(newVeiculo);
     (window as any).bankAPI.createProducao(newVeiculo);
@@ -37,7 +32,7 @@ window.onload = async () => {
             estoque[i].descricao,
             estoque[i].quantidade,
             estoque[i].fabricante,
-            estoque[i].id,
+            estoque[i].id
         );
         listProduto.push(produto);
     }
